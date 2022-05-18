@@ -1,0 +1,16 @@
+import java.util.Scanner; 
+public class Main { 
+    public static void main(String[] args) {
+        
+        Scanner scan = new Scanner(System.in); 
+		
+        int n = scan.nextInt(); 
+        
+        // 출력 예제에 나와 있는 '숫자와 기호 사이 공백' 주의해서 출력
+        for (int i=1; i<10; i++) {
+        	System.out.println(n+"*"+i+"="+n*i);
+        }
+        
+        scan.close();
+    }
+}
