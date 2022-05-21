@@ -1,0 +1,36 @@
+// java : BufferedReader와 BufferedWriter 사용
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+
+public class Main { // 예외 처리를 해주지 않으면 컴파일 에러가 난다.
+    public static void main(String[] args) throws IOException {
+        
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+        // BufferdReader의 readLine을 사용하면 String을 받으므로 int 변환
+		int test = Integer.parseInt(br.readLine());
+		
+		for(int i=0; i<test; i++) {
+        	// StringTokenizer의 nextToken()은 
+            // readLine으로 입력받은 String을 공백을 기준으로 나눠준다.
+			StringTokenizer st = new StringTokenizer(br.readLine());
+			
+			int a = Integer.parseInt(st.nextToken()); // 똑같이 int 변환
+			int b = Integer.parseInt(st.nextToken());
+			
+            // BufferedWriter의 write()는 자동개행이 없으므로 필요시 추가
+			bw.write((a+b)+"\n"); 
+		}
+        // close()를 잊지 말자
+        br.close();
+		bw.flush(); 
+        	// BufferedWriter는 사용 후 flush()를 이용해 버퍼에 남아있는
+            // 내용들을 출력해 줘야 한다.
+		bw.close();
+    }
+}
