@@ -9,8 +9,8 @@ public class Main {
 		for(int i=1; i<=test; i++) {
 			int a = in.nextInt();
 			int b = in.nextInt();
-			System.out.printf("Case #"+i+": "+(a+b)+"\n");
-		}
+			System.out.println("Case #"+i+": "+(a+b));
+		} // println 이용
 		
 		in.close();
     }
