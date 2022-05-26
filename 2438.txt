@@ -1,0 +1,18 @@
+import java.util.Scanner; 
+public class Main { 
+    public static void main(String[] args) {
+        
+       Scanner in = new Scanner(System.in);
+		
+		int star = in.nextInt();
+		
+		for(int i=0; i<star; i++) { // 다음 줄로 가기 위한 for문
+			for(int j=0; j<=i; j++) { // 별 찍기 위한 for문
+				System.out.print('*');
+			}
+			System.out.println(); // 개행 필요
+		}
+		
+		in.close();
+    }
+}
