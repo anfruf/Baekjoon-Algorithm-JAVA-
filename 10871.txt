@@ -1,0 +1,19 @@
+import java.util.Scanner; 
+public class Main { 
+    public static void main(String[] args) {
+       
+		Scanner in = new Scanner(System.in);
+		
+		int n = in.nextInt(); 
+		int x = in.nextInt(); 
+		
+		int[] num = new int[n]; // 정수 n개로 이루어진 수열
+		for (int i=0; i<n; i++) { // 수열에 값을 입력받기
+			num[i] = in.nextInt();
+			
+            // x보다 작다면 출력(공백 두고 나란히 출력)
+			if(x>num[i]) System.out.print(num[i]+" ");
+		}
+		in.close();
+    }
+}
