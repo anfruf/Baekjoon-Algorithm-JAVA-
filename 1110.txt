@@ -1,0 +1,27 @@
+import java.util.Scanner; 
+public class Main { 
+    public static void main(String[] args) {
+       
+		Scanner in = new Scanner(System.in);
+		
+		int input = in.nextInt();
+		int number = input;
+		
+		int count = 0;
+		while(true) { // 새로운 수가 input과 같을 때까지 반복
+			int a = number/10; // 입력받은 수의 십의 자리
+			int b = number%10; // 입력받은 수의 일의 자리
+			int sum = a+b;
+			int newNumber = b*10 + sum%10; // 새로운 수
+			
+			number = newNumber; 
+			count++;
+			
+			if(newNumber == input) break;
+		}
+		
+		System.out.println(count);
+		
+		in.close();
+    }
+}
