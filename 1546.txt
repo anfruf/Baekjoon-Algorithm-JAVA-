@@ -1,0 +1,27 @@
+import java.util.Scanner; 
+public class Main { 
+    public static void main(String[] args) {
+       
+		Scanner scan = new Scanner(System.in);
+		
+		int input = scan.nextInt();
+		int[] arr = new int[input]; // 입력받은 input만큼 점수의 배열
+		
+		double max = 0; // max는 double로 설정
+		for (int i=0; i<arr.length; i++) { 
+			arr[i] = scan.nextInt();
+			if (arr[i]>max) max = arr[i]; 
+            // int 점수들을 입력받아 최댓값 double max 설정
+		}
+		
+		double result = 0;
+		for(int i=0; i<arr.length; i++) {
+			result += (arr[i] / max * 100)/input;
+            // 새로운 평균 += (점수/최댓값*100)/점수들의 갯수
+		}
+
+		System.out.println(result);
+		
+		scan.close();
+    }
+}
