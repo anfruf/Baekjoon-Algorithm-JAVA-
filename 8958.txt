@@ -1,0 +1,25 @@
+// 1. String 풀이
+import java.util.Scanner; 
+public class Main { 
+    public static void main(String[] args) {
+       
+		Scanner scan = new Scanner(System.in);
+		
+		int test = scan.nextInt();
+		
+		for (int i=0; i<test; i++) { // 테스트 케이스만큼 반복
+			
+			String str = scan.next(); // OX 문자열 입력받기
+			int sum=0, count=1;
+			for (int j=0; j<str.length(); j++) { // 문자열 돌기
+				
+				if(str.charAt(j)=='O') {  // 해당 위치 문자가 O 라면
+					sum += count; 
+					count++; // 연속 count하기
+				}
+				else count=1; // X 문자일 때는 연속 초기화
+			}
+			System.out.println(sum);
+		}
+    }
+}
