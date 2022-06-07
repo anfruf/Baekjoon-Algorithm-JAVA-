@@ -1,0 +1,33 @@
+import java.util.Scanner; 
+public class Main { 
+    public static void main(String[] args) {
+       
+		Scanner scan = new Scanner(System.in);
+		
+		int test = scan.nextInt();
+		
+		for (int i=0; i<test; i++) {
+			
+			int group = scan.nextInt();
+			
+            // 그룹만큼 점수를 입력받아 모두 합하기
+			double avg =0;
+			int[] score = new int[group];
+			for (int j=0; j<group; j++) { 
+				score[j] = scan.nextInt();
+				avg += score[j];
+			}
+			
+            // 그룹의 평균
+			avg /= group;
+			
+            // 그룹에서 평균보다 높은 점수들 count
+			double count =0;
+			for (int j=0; j<group; j++) {
+				if (avg < score[j]) count++;
+			}
+            // 출력시 %%로 출력하지 않으면 Conversion 오류가 난다.
+			System.out.printf("%.3f%%\n",count*100/group);
+		}
+    }
+}
