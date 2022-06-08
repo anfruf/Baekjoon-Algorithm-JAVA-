@@ -1,0 +1,10 @@
+public class Test { // Test class
+    public long sum(int[] a) {
+		
+		long sum =0; // return type == long
+		for(int i=0; i<a.length; i++) { // 배열을 돌며 합 구하기
+			sum += a[i];
+		}
+		return sum;
+	}
+}
