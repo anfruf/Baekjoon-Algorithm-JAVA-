@@ -1,0 +1,27 @@
+public class Main { 
+    public static void main(String[] args) { // main
+       
+		int[] arr = new int[10000]; // 범위는 문제에 제시됨
+		for (int i=0; i<10000; i++) {
+			if (check(i)<10000) { // 새로운 수와 같은 index = 1 변환
+				arr[check(i)] = 1;
+			}
+		}
+		for (int i=0; i<10000; i++) {
+			if(arr[i] != 1) { // 1로 변환되지 않았다면 셀프 넘버
+				System.out.println(i);
+			}
+		}
+	}
+	
+	public static int check(int n) { // 함수 부분
+		int num = n;
+        
+        // 0이 될 때까지 매개변수 n을 나누며 자기자신 + 각 자리 수
+		while(n>0) { 
+			num += n%10;
+			n /= 10;
+		}
+		return num; // 새로운 수 RTN 
+	}
+}
