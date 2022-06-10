@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Main { 
+// ---------------main----------------
+    public static void main(String[] args) { 
+       
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println(HanSu(scan.nextInt())); // 입력받은 수 바로 대입
+		scan.close();
+	}
+// ---------------mehod----------------	
+	public static int HanSu(int n) {
+		int sum = 0;
+
+		for(int i=1; i<n+1; i++) {
+			if(i<100) sum++; // 두 자리 수일 때
+			else // 세 자리 수일 때 
+				if(i/100-i/10%10 == i/10%10-i%10) sum++;
+		}
+		return sum;
+	}
+}
