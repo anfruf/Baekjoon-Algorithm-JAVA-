@@ -1,0 +1,11 @@
+// System.in 사용
+import java.io.IOException; // 예외처리 필수
+public class Main { 
+    public static void main(String[] args) throws IOException { 
+        
+        // System.in : java의 기초 입력방법
+        // 			   한 바이트씩 입력을 받는다.
+		int input = System.in.read();
+		System.out.println(input);
+	}
+}
