@@ -1,0 +1,18 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer; // StringTokenizer import 주의
+public class Main { 
+    public static void main(String[] args) throws IOException { 
+       
+		BufferedReader br 
+        		= new BufferedReader(new InputStreamReader(System.in));
+		String str = br.readLine();
+		br.close();
+		
+        // StringTokenizer : 분리 기준에 따라 토큰에 저장
+        // StringTokenizer(str, " ") : str을 공백 기준으로 나누어 토큰 저장
+		StringTokenizer st = new StringTokenizer(str, " ");
+		System.out.println(st.countTokens()); // 토큰의 개수만 세면 된다.
+	}
+}
