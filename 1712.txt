@@ -1,0 +1,30 @@
+// 손익분기점 구하기
+// a(고정비용) + b(가변비용) x result(판매량) < c(상품 가격) x result(판매량)
+// ---> a+b*result < c*result
+// ---> a < c*result - b*result
+// ---> a < (c-b)*result
+// ---> a / (c-b) < result
+// ---> result = a / (c-b) +1 (이익 발생)
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+public class Main{
+    public static void main(String[] args) throws IOException {
+    
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine()); // 공백 기준 입력받기
+		
+		int a = Integer.parseInt(st.nextToken());
+		int b = Integer.parseInt(st.nextToken());
+		int c = Integer.parseInt(st.nextToken());
+		
+		if (b >= c)
+			System.out.println(-1);
+		else {
+			int result = a / (c-b) +1;
+			System.out.println(result);
+		}
+		br.close();
+    }
+}
